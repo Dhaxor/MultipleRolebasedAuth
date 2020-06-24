@@ -18,5 +18,11 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/player', 'PlayerController@index')->name('player')->middleware('player');
+Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
+Route::get('/superadmin', 'SuperAdminController@index')->name('superadmin')->middleware('superadmin');
+Route::get('/scout', 'ScoutController@index')->name('scout')->middleware('scout');
+Route::get('/team', 'TeamController@index')->name('team')->middleware('team');
+Route::get('/academy', 'AcademicController@index')->name('academy')->middleware('academy');
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
